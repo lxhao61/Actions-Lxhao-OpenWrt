@@ -18,8 +18,8 @@ sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generat
 sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-settings
 
 # 删除自带msd_lite源码
-#rm -rf feeds/packages/net/msd_lite
-#rm -rf package/feeds/packages/msd_lite
+rm -rf feeds/packages/net/msd_lite
+rm -rf package/feeds/packages/msd_lite
 
 # 拉取PassWall源码
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
@@ -34,8 +34,8 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luc
 #cd -
 
 # 拉取msd_lite源码
-#git clone https://github.com/ximiTech/msd_lite.git package/msd_lite
-#git clone https://github.com/ximiTech/luci-app-msd_lite.git package/luci-app-msd_lite
+git clone https://github.com/ximiTech/msd_lite.git package/msd_lite
+git clone https://github.com/ximiTech/luci-app-msd_lite.git package/luci-app-msd_lite
 
 # 拉取ShadowSocksR Plus+源码
 #git clone -b master https://github.com/fw876/helloworld.git package/helloworld
