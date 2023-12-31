@@ -18,8 +18,8 @@ sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generat
 sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-settings
 
 # 删除自带msd_lite源码
-rm -rf feeds/packages/net/msd_lite
-rm -rf package/feeds/packages/msd_lite
+#rm -rf feeds/packages/net/msd_lite
+#rm -rf package/feeds/packages/msd_lite
 
 # 拉取PassWall源码
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
@@ -37,14 +37,5 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luc
 #git clone -b master https://github.com/fw876/helloworld.git package/helloworld
 
 # 拉取msd_lite源码
-git clone https://github.com/ximiTech/msd_lite.git package/msd_lite
-git clone https://github.com/ximiTech/luci-app-msd_lite.git package/luci-app-msd_lite
-
-# 拉取luci-app-smartdns插件
-#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
-
-# 删除原版luci-app-softethervpn插件
-#rm -rf feeds/luci/applications/luci-app-softethervpn
-
-# 拉取luci-app-softethervpn插件
-#svn co https://github.com/lxhao61/openwrt-plugin/trunk/package/lean/luci-app-softethervpn feeds/luci/applications/luci-app-softethervpn
+#git clone https://github.com/ximiTech/msd_lite.git package/msd_lite
+#git clone https://github.com/ximiTech/luci-app-msd_lite.git package/luci-app-msd_lite
