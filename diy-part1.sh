@@ -11,7 +11,7 @@
 #
 
 # 回退源码
-#git reset --hard 52c8a13
+git reset --hard 9c8d196
 
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
