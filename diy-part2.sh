@@ -39,3 +39,6 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luc
 # 拉取 msd_lite 源码
 git clone https://github.com/ximiTech/msd_lite.git package/msd_lite
 git clone https://github.com/ximiTech/luci-app-msd_lite.git package/luci-app-msd_lite
+
+# 拉取 luci-app-tailscale 源码
+git clone https://github.com/selfcan/luci-app-tailscale.git package/feeds/luci/luci-app-tailscale
