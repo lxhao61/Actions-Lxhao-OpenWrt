@@ -21,6 +21,10 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 rm -rf feeds/packages/net/msd_lite
 rm -rf package/feeds/packages/msd_lite
 
+# 拉取 msd_lite 源码
+git clone https://github.com/ximiTech/msd_lite.git package/feeds/packages/msd_lite
+git clone https://github.com/ximiTech/luci-app-msd_lite.git package/feeds/luci/luci-app-msd_lite
+
 # 拉取 passwall-packages 源码
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/feeds/packages/passwall
 #cd package/feeds/packages/passwall
@@ -35,10 +39,6 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/feeds/luci/l
 
 # 拉取 ShadowSocksR Plus+ 源码
 #git clone -b master https://github.com/fw876/helloworld.git package/helloworld
-
-# 拉取 msd_lite 源码
-git clone https://github.com/ximiTech/msd_lite.git package/msd_lite
-git clone https://github.com/ximiTech/luci-app-msd_lite.git package/luci-app-msd_lite
 
 # 拉取 luci-app-tailscale 源码
 #git clone https://github.com/selfcan/luci-app-tailscale.git package/feeds/luci/luci-app-tailscale
