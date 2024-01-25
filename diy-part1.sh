@@ -17,16 +17,4 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-#sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-
-# 取消 helloworld 源注释（ssr-plus）
-#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
-
-# 添加 xiaorouji 大 passwall 源
-#sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main' feeds.conf.default
-
-# 注释掉默认的 packages 源
-#sed -i 's/^\(.*packages\)/#&/' feeds.conf.default
-
-# 添加修改的 packages 源
-#sed -i '$a src-git packages https://github.com/lxhao61/packages.git' feeds.conf.default
+#echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
