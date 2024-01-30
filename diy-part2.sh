@@ -21,7 +21,7 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 rm -rf feeds/packages/net/msd_lite
 rm -rf package/feeds/packages/msd_lite
 
-# 拉取 msd_lite
+# 拉取 msd_lite、luci-app-msd_lite
 git clone https://github.com/ximiTech/msd_lite.git package/msd_lite/msd_lite
 git clone https://github.com/ximiTech/luci-app-msd_lite.git package/msd_lite/luci-app-msd_lite
 
