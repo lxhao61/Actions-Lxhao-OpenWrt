@@ -40,6 +40,9 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luc
 # 拉取 ShadowSocksR Plus+
 #git clone -b master https://github.com/fw876/helloworld.git package/helloworld
 
+# 删除自带 pgyvpn
+rm -rf feeds/packages/net/pgyvpn
+
 # 删除 passwall-packages 中 naiveproxy
 #rm -rf package/passwall/packages/naiveproxy
 
@@ -65,6 +68,8 @@ function merge_package(){
     done
     cd "$rootdir"
 }
+# 提取 pgyvpn
+merge_package packages-pgyvpn https://github.com/hue715/lean-packages.git feeds/packages/net net/pgyvpn
 # 提取 naiveproxy
 #merge_package master https://github.com/immortalwrt/packages.git package/passwall/packages net/naiveproxy
 # 提取 tailscale
