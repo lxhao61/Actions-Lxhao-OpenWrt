@@ -32,8 +32,8 @@ git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/pas
 #cd -
 
 # 拉取 luci-app-passwall
-git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci-app-passwall
-#cd package/passwall/luci-app-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+#cd package/passwall/luci
 #git checkout d1e618220a9a0a4b73d536101f452a2f4cf14861
 #cd -
 
@@ -41,7 +41,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luc
 #git clone -b master https://github.com/fw876/helloworld.git package/helloworld
 
 # 删除 passwall-packages 中 naiveproxy
-rm -rf package/passwall/packages/naiveproxy
+#rm -rf package/passwall/packages/naiveproxy
 
 # 删除自带 tailscale
 rm -rf feeds/packages/net/tailscale
@@ -66,6 +66,7 @@ function merge_package(){
     cd "$rootdir"
 }
 # 提取 naiveproxy
-merge_package master https://github.com/immortalwrt/packages.git package/passwall/packages net/naiveproxy
+#merge_package master https://github.com/immortalwrt/packages.git package/passwall/packages net/naiveproxy
 # 提取 tailscale
-merge_package main https://github.com/kenzok8/small-package.git feeds/packages/net tailscale
+#merge_package main https://github.com/kenzok8/small-package.git feeds/packages/net tailscale
+merge_package master https://github.com/openwrt/packages.git feeds/packages/net net/tailscale
