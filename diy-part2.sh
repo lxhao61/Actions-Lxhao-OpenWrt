@@ -40,6 +40,9 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luc
 # 拉取 ShadowSocksR Plus+
 #git clone -b master https://github.com/fw876/helloworld.git package/helloworld
 
+# 拉取 OpenAppFilter、luci-app-oaf
+git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+
 # 删除自带 pgyvpn
 rm -rf feeds/packages/net/pgyvpn
 rm -rf package/feeds/packages/pgyvpn
