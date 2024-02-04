@@ -45,8 +45,7 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # 删除 passwall-packages 中 naiveproxy
 #rm -rf package/passwall/packages/naiveproxy
 # 删除自带 pgyvpn
-rm -rf feeds/packages/net/pgyvpn
-rm -rf package/feeds/packages/pgyvpn
+#rm -rf feeds/packages/net/pgyvpn
 # 删除自带 tailscale
 rm -rf feeds/packages/net/tailscale
 
@@ -72,7 +71,7 @@ function merge_package(){
 # 提取 naiveproxy
 #merge_package master https://github.com/immortalwrt/packages.git package/passwall/packages net/naiveproxy
 # 提取 pgyvpn
-#merge_package packages-pgyvpn https://github.com/hue715/lean-packages.git package/feeds/packages net/pgyvpn
+#merge_package packages-pgyvpn https://github.com/hue715/lean-packages.git feeds/packages/net net/pgyvpn
 # 提取 tailscale
 #merge_package main https://github.com/kenzok8/small-package.git feeds/packages/net tailscale
 merge_package master https://github.com/openwrt/packages.git feeds/packages/net net/tailscale
