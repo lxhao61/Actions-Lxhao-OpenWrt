@@ -17,14 +17,6 @@ sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generat
 # 取消登陆密码
 sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-settings
 
-# 删除自带 msd_lite
-rm -rf feeds/packages/net/msd_lite
-rm -rf package/feeds/packages/msd_lite
-
-# 拉取 msd_lite、luci-app-msd_lite
-git clone https://github.com/ximiTech/msd_lite.git package/msd_lite/msd_lite
-git clone https://github.com/ximiTech/luci-app-msd_lite.git package/msd_lite/luci-app-msd_lite
-
 # 拉取 passwall-packages
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 #cd package/passwall/packages
@@ -40,16 +32,21 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luc
 # 拉取 ShadowSocksR Plus+
 #git clone -b master https://github.com/fw876/helloworld.git package/helloworld
 
+# 删除自带 msd_lite
+rm -rf feeds/packages/net/msd_lite
+rm -rf package/feeds/packages/msd_lite
+# 拉取 msd_lite、luci-app-msd_lite
+git clone https://github.com/ximiTech/msd_lite.git package/msd_lite/msd_lite
+git clone https://github.com/ximiTech/luci-app-msd_lite.git package/msd_lite/luci-app-msd_lite
+
 # 拉取 OpenAppFilter、luci-app-oaf
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
+# 删除 passwall-packages 中 naiveproxy
+#rm -rf package/passwall/packages/naiveproxy
 # 删除自带 pgyvpn
 rm -rf feeds/packages/net/pgyvpn
 rm -rf package/feeds/packages/pgyvpn
-
-# 删除 passwall-packages 中 naiveproxy
-#rm -rf package/passwall/packages/naiveproxy
-
 # 删除自带 tailscale
 rm -rf feeds/packages/net/tailscale
 
@@ -72,10 +69,10 @@ function merge_package(){
     done
     cd "$rootdir"
 }
-# 提取 pgyvpn
-merge_package packages-pgyvpn https://github.com/hue715/lean-packages.git package/feeds/packages net/pgyvpn
 # 提取 naiveproxy
 #merge_package master https://github.com/immortalwrt/packages.git package/passwall/packages net/naiveproxy
+# 提取 pgyvpn
+#merge_package packages-pgyvpn https://github.com/hue715/lean-packages.git package/feeds/packages net/pgyvpn
 # 提取 tailscale
 #merge_package main https://github.com/kenzok8/small-package.git feeds/packages/net tailscale
 merge_package master https://github.com/openwrt/packages.git feeds/packages/net net/tailscale
