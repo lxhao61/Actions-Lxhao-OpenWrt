@@ -30,7 +30,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luc
 #cd -
 
 # 拉取 ShadowSocksR Plus+
-#git clone -b master https://github.com/fw876/helloworld.git package/helloworld
+#git clone https://github.com/fw876/helloworld.git -b master package/helloworld
 
 # 删除自带 msd_lite
 rm -rf feeds/packages/net/msd_lite
