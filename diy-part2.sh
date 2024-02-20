@@ -19,14 +19,14 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 
 # 拉取 passwall-packages
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
-cd package/passwall/packages
-git checkout fed70a5113b60c96d9c8182e40770f37c83d67ba
-cd -
+#cd package/passwall/packages
+#git checkout fed70a5113b60c96d9c8182e40770f37c83d67ba
+#cd -
 
 # 拉取 luci-app-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
 #cd package/passwall/luci
-#git checkout d1e618220a9a0a4b73d536101f452a2f4cf14861
+#git checkout ebd3355bdf2fcaa9e0c43ec0704a8d9d8cf9f658
 #cd -
 
 # 拉取 ShadowSocksR Plus+
@@ -42,8 +42,10 @@ git clone https://github.com/ximiTech/luci-app-msd_lite.git package/msd_lite/luc
 # 拉取 OpenAppFilter、luci-app-oaf
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
+# 删除 passwall-packages 中 gn
+rm -rf package/passwall/packages/gn
 # 删除 passwall-packages 中 naiveproxy
-#rm -rf package/passwall/packages/naiveproxy
+rm -rf package/passwall/packages/naiveproxy
 # 删除自带 pgyvpn
 #rm -rf feeds/packages/net/pgyvpn
 # 删除自带 tailscale
@@ -68,10 +70,11 @@ function merge_package(){
     done
     cd "$rootdir"
 }
+# 提取 gn
+merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git package/passwall/packages devel/gn
 # 提取 naiveproxy
-#merge_package master https://github.com/immortalwrt/packages.git package/passwall/packages net/naiveproxy
+merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git package/passwall/packages net/naiveproxy
 # 提取 pgyvpn
 #merge_package packages-pgyvpn https://github.com/hue715/lean-packages.git feeds/packages/net net/pgyvpn
 # 提取 tailscale
-#merge_package main https://github.com/kenzok8/small-package.git feeds/packages/net tailscale
-merge_package master https://github.com/openwrt/packages.git feeds/packages/net net/tailscale
+merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/tailscale
