@@ -22,13 +22,13 @@ rm -rf feeds/packages/net/v2ray-geodata
 rm -rf package/feeds/packages/v2ray-geodata
 
 # 拉取 passwall-packages
-git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
+#git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall/packages
 #cd package/passwall/packages
 #git checkout fed70a5113b60c96d9c8182e40770f37c83d67ba
 #cd -
 
 # 拉取 luci-app-passwall
-git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
+#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luci
 #cd package/passwall/luci
 #git checkout ebd3355bdf2fcaa9e0c43ec0704a8d9d8cf9f658
 #cd -
